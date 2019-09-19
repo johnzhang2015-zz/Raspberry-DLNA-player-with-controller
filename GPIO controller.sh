@@ -12,9 +12,13 @@ do
 	GPIO8=$(cat /sys/class/gpio/gpio8/value)
 	echo $GPIO8
 
-	if [ $GPIO8 -eq 0 ];then
+	if [ $GPIO8 -eq 1 ];then
+	
+	echo "8" > /sys/class/gpio/export
+	echo "out" > /sys/class/gpio/gpio8/direction
 
-
+	fi
+done
 
 
 
